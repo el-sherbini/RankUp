@@ -37,7 +37,7 @@
         <div class="search">
           <div class="search-input">
             <i class="fa fa-search"></i>
-            <input type="search" name="search" placeholder="Search" />
+            <input type="text" name="search" placeholder="Search" />
           </div>
           <i class="fa-solid fa-ellipsis"></i>
         </div>
@@ -49,7 +49,7 @@
               <h2>Upwork Events & Webinars</h2>
               <span class="date">8/23/22</span>
             </div>
-            <h2>Announcements from Upwork</h2>
+            <h3>Announcements from Upwork</h3>
             <p>Upwork Talent Success: Hi, Omar, ...</p>
           </div>
         </div>
@@ -59,9 +59,15 @@
       <!-- Chat Content Section Begin -->
 
       <section class="chat-area">
-        <div class="title">
-          <h1>Upwork Events & Webinars</h1>
-          <h2>Announcements from Upwork</h2>
+        <div class="header">
+          <div>
+            <h1>Upwork Events & Webinars</h1>
+            <h2>Announcements from Upwork</h2>
+          </div>
+          <i
+            class="fa-solid fa-magnifying-glass-arrow-right"
+            onclick="openChats()"
+          ></i>
         </div>
 
         <div class="conversation">
@@ -71,29 +77,9 @@
               alt="receiver image"
             />
             <div class="information">
-              <div class="header">
+              <div class="title">
                 <h3>Upwork Talent Success</h3>
-                <b><span class="badge">APP</span></b>
-                <span class="date">8:46 PM</span>
-              </div>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Distinctio soluta, dolor inventore nihil ex nulla cupiditate
-                repudiandae temporibus, provident nam tempore blanditiis.
-                Cupiditate autem voluptates sunt voluptatibus modi impedit nemo.
-              </p>
-            </div>
-          </div>
-
-          <div class="sender">
-            <img
-              src="assets/img/testimonial-2-nurhansamy.jpg"
-              alt="receiver image"
-            />
-            <div class="information">
-              <div class="header">
-                <h3>Upwork Talent Success</h3>
-                <b><span class="badge">APP</span></b>
+                <span class="badge">APP</span>
                 <span class="date">8:46 PM</span>
               </div>
               <p>
@@ -105,13 +91,87 @@
             </div>
           </div>
         </div>
+
+        <div class="message-area">
+          <textarea
+            rows="6"
+            placeholder="Can't send messages in an archived room"
+            disabled
+          ></textarea>
+
+          <div class="icons">
+            <div class="left">
+              <i class="fa-solid fa-bold"></i>
+              <i class="fa-solid fa-italic"></i>
+              <i class="fa-solid fa-strikethrough"></i>
+              <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div class="right">
+              <i class="fa-solid fa-at"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-face-smile"></i>
+              |
+              <i class="fa-solid fa-gear" onclick="openOptions()"></i>
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Chat Content Section End -->
 
       <!-- Options Section Begin -->
 
-      <section class="options">right</section>
+      <section class="options">
+        <div class="header">
+          <div class="title">
+            <i class="fa-solid fa-user-group"></i>
+            <div>
+              <h2>Upwork Events & Webinars</h2>
+              <h3>Announcements from Upwork</h3>
+            </div>
+          </div>
+          <i class="fa-solid fa-xmark" onclick="closeOptions()"></i>
+        </div>
+
+        <div class="options-items">
+          <div class="item">
+            <div>
+              <i class="fa-solid fa-search"></i>
+              <span>Search Messages</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="item">
+            <div>
+              <i class="fa-solid fa-circle-user"></i>
+              <span>People</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="item">
+            <div>
+              <i class="fa-solid fa-paperclip"></i>
+              <span>Files & Links</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div class="item">
+            <div>
+              <i class="fa-solid fa-book"></i>
+              <span>Personal notepad</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </section>
       <!-- Options Section End -->
     </div>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
