@@ -1,0 +1,57 @@
+@media only screen and (max-width: 1199px) {
+  .chats-page .info {
+    width: 0;
+    position: fixed;
+    right: 0;
+  }
+
+  .chats-page .info.open {
+    width: 50%;
+    border-left: 2px solid var(--grey);
+  }
+
+  .chats-page .chats {
+    flex-basis: 35%;
+  }
+
+  .chats-page .chat-area {
+    flex-basis: 65%;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .chats-page .chats {
+    flex-basis: 45%;
+  }
+
+  .chats-page .chat-area {
+    flex-basis: 55%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .chats-page .chats {
+    position: fixed;
+    width: 100%;
+    border-right: 2px solid var(--grey);
+    left: -100%;
+  }
+
+  .chats-page .chat-area .header .headers i {
+    display: inline;
+  }
+
+  .chats-page .info.open {
+    width: 100%;
+    border: none;
+  }
+
+  .chats-page .chats.open {
+    left: 0;
+    border: none;
+  }
+
+  .chats-page .chat-area {
+    flex-basis: 100%;
+  }
+}

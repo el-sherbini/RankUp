@@ -6,27 +6,6 @@
     File Description : Main Responsive file of the template
 *****************************************************************/
 
-@media only screen and (max-width: 1199px) {
-  .chats-page .options {
-    width: 0;
-    position: fixed;
-    right: 0;
-  }
-
-  .chats-page .options.open {
-    width: 50%;
-    border-left: 2px solid var(--grey);
-  }
-
-  .chats-page .chats {
-    flex-basis: 35%;
-  }
-
-  .chats-page .chat-area {
-    flex-basis: 65%;
-  }
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar-light .navbar-brand {
     position: relative;
@@ -819,35 +798,6 @@
     padding-top: 150px;
     padding-bottom: 100px;
     background-position: center;
-  }
-
-  .chats-page .chats {
-    flex-basis: 45%;
-  }
-
-  .chats-page .chat-area {
-    flex-basis: 55%;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .chats-page .chats {
-    position: fixed;
-    width: 90%;
-    border-right: 2px solid var(--grey);
-    left: -90%;
-  }
-
-  .chats-page .options.open {
-    width: 90%;
-  }
-
-  .chats-page .chats.open {
-    left: 0;
-  }
-
-  .chats-page .chat-area {
-    flex-basis: 100%;
   }
 }
 
