@@ -42,7 +42,7 @@
             <i class="fa fa-search"></i>
             <input type="text" name="search" placeholder="Search" />
           </div>
-          <i class="fa-solid fa-xmark" onclick="toggleChats()"></i>
+          <i class="fa-solid fa-xmark" onclick="toggleSection('chats')"></i>
         </div>
 
         <div class="chat active">
@@ -76,13 +76,19 @@
       <section class="chat-area">
         <div class="header">
           <div class="headers">
-            <i class="fa-solid fa-chevron-left" onclick="toggleChats()"></i>
+            <i
+              class="fa-solid fa-chevron-left"
+              onclick="toggleSection('chats')"
+            ></i>
             <div>
               <h1>Upwork Events & Webinars</h1>
               <h2>Announcements from Upwork</h2>
             </div>
           </div>
-          <i class="fa-solid fa-circle-exclamation" onclick="openInfo()"></i>
+          <i
+            class="fa-solid fa-circle-exclamation"
+            onclick="toggleSection('info')"
+          ></i>
         </div>
 
         <div class="conversation">
@@ -127,9 +133,7 @@
         </div>
 
         <div class="message-area">
-          <textarea
-            placeholder="Can't send messages in an archived room"
-          ></textarea>
+          <textarea placeholder="Write a message..."></textarea>
 
           <div class="icons">
             <div class="left">
@@ -163,11 +167,14 @@
               <h3>Announcements from Upwork</h3>
             </div>
           </div>
-          <i class="fa-solid fa-xmark" onclick="closeInfo()"></i>
+          <i class="fa-solid fa-xmark" onclick="toggleSection('info')"></i>
         </div>
 
         <div class="info-items">
-          <div class="item">
+          <div
+            class="item search-messages-item"
+            onclick="toggleInfoItem('search-messages')"
+          >
             <div>
               <i class="fa-solid fa-search"></i>
               <span>Search Messages</span>
@@ -175,7 +182,10 @@
             <i class="fa-solid fa-chevron-right"></i>
           </div>
 
-          <div class="item">
+          <div
+            class="item milestone-item"
+            onclick="toggleInfoItem('milestone')"
+          >
             <div>
               <i class="fa-solid fa-exclamation"></i>
               <span>Milestone</span>
@@ -183,7 +193,10 @@
             <i class="fa-solid fa-chevron-right"></i>
           </div>
 
-          <div class="item">
+          <div
+            class="item files-links-item"
+            onclick="toggleInfoItem('files-links')"
+          >
             <div>
               <i class="fa-solid fa-paperclip"></i>
               <span>Files & Links</span>
@@ -191,12 +204,93 @@
             <i class="fa-solid fa-chevron-right"></i>
           </div>
 
-          <div class="item">
+          <div class="item notepad-item" onclick="toggleInfoItem('notepad')">
             <div>
               <i class="fa-solid fa-clipboard"></i>
               <span>Personal notepad</span>
             </div>
             <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+
+        <div class="info-details">
+          <div class="search-messages details-item">
+            <div class="details-header">
+              <div class="title">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="toggleInfoItem('search-messages')"
+                ></i>
+                <h4>Search Messages</h4>
+              </div>
+            </div>
+            <input type="text" name="search" placeholder="Search" />
+          </div>
+
+          <div class="milestone details-item">
+            <div class="details-header">
+              <div class="title">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="toggleInfoItem('milestone')"
+                ></i>
+                <h4>Milestone</h4>
+              </div>
+            </div>
+            <textarea disabled>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </textarea>
+          </div>
+
+          <div class="files-links details-item">
+            <div class="details-header">
+              <div class="title">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="toggleInfoItem('files-links')"
+                ></i>
+                <h4>Files & Links</h4>
+              </div>
+              <nav>
+                <span class="active">All</span>
+                <span>Files</span>
+                <span>Links</span>
+              </nav>
+            </div>
+            <input type="text" name="search" placeholder="Search" />
+          </div>
+
+          <div class="notepad details-item">
+            <div class="details-header">
+              <div class="title">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="toggleInfoItem('notepad')"
+                ></i>
+                <h4>Personal notepad</h4>
+              </div>
+            </div>
+            <textarea
+              placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum."
+            ></textarea>
           </div>
         </div>
       </section>
