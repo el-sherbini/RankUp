@@ -5,7 +5,7 @@
   --blue: #007bff;
   --grey: #6c757d;
 
-  --light-grey: #c7ced4;
+  --light-grey: #eee;
 }
 
 .chats-page * {
@@ -34,10 +34,6 @@
 
 .chats-page .chats {
   flex-basis: 20%;
-}
-
-.chats-page .chat-area {
-  flex-basis: 55%;
 }
 
 .chats-page .info {
@@ -116,6 +112,8 @@
 }
 
 .chats-page .chat-area {
+  flex-basis: 55%;
+  position: relative;
   border-left: 1px solid var(--light-grey);
   border-right: 1px solid var(--light-grey);
 }
@@ -149,7 +147,7 @@
 
 .chats-page .chat-area .conversation {
   padding: 0 15px;
-  height: 73vh;
+  height: 60vh;
   border-bottom: 1px solid var(--light-grey);
   overflow-y: scroll;
 }
@@ -215,15 +213,39 @@
 
 .chats-page .chat-area .message-area {
   padding: 10px;
-  position: relative;
-  height: calc(100vh - (4rem + 73vh));
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  height: calc(100vh - (4rem + 63vh));
 }
 
-.chats-page .chat-area textarea {
+.chats-page .chat-area .write-message {
   width: 100%;
   resize: none;
   margin-bottom: 5px;
   height: calc(100% - 35px);
+  outline: none;
+  color: var(--grey);
+  border: 1px solid var(--light-grey);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chats-page .chat-area .message-area .send {
+  position: absolute;
+  color: #222f3e;
+  right: 30px;
+  top: 22px;
+  z-index: 5;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.chats-page .chat-area .message-area .send:hover {
+  background-color: #222f3e;
+  color: #fff;
 }
 
 .chats-page .chat-area .message-area .icons {
@@ -235,7 +257,11 @@
   width: calc(100% - 20px);
 }
 
-.chats-page .chat-area .message-area i {
+.chats-page .chat-area .message-area .icons i {
+  user-select: none;
+}
+
+.chats-page .chat-area .message-area .icons i {
   margin: 0 5px;
   cursor: pointer;
   opacity: 0.8;
@@ -244,6 +270,10 @@
 
 .chats-page .chat-area .message-area i:hover {
   opacity: 1;
+}
+
+.chats-page .chat-area .tox-tinymce {
+  height: inherit !important;
 }
 
 .chats-page .chats,
@@ -317,6 +347,7 @@
 
 .chats-page .info .info-details {
   height: calc((100% - 12rem));
+  display: none;
 }
 
 .chats-page .info .info-details .details-item {

@@ -31,6 +31,20 @@
       src="https://kit.fontawesome.com/57ec3efc26.js"
       crossorigin="anonymous"
     ></script>
+
+    <script
+      src="https://cdn.tiny.cloud/1/s2jmg399d3jcrvomq21w39h9otm6ed6h2b8ngewrpqytgbqz/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <script>
+      tinymce.init({
+        selector: "#mytextarea",
+        menubar: false,
+        plugins: "emoticons",
+        toolbar: "undo redo | blocks | bold italic | emoticons",
+      });
+    </script>
   </head>
 
   <body>
@@ -133,13 +147,24 @@
         </div>
 
         <div class="message-area">
-          <textarea placeholder="Write a message..."></textarea>
+          <textarea placeholder="Write a message..." id="mytextarea">
+          </textarea>
+          <strong class="send"
+            >Send <i class="fa-solid fa-paper-plane"></i
+          ></strong>
 
-          <div class="icons">
+          <!-- <div contenteditable="true" class="write-message">
+            Write a message...
+          </div> -->
+
+          <!-- <div class="icons">
             <div class="left">
-              <i class="fa-solid fa-bold"></i>
-              <i class="fa-solid fa-italic"></i>
-              <i class="fa-solid fa-strikethrough"></i>
+              <i class="fa-solid fa-bold" onclick="formatText('strong')"></i>
+              <i class="fa-solid fa-italic" onclick="formatText('em')"></i>
+              <i
+                class="fa-solid fa-strikethrough"
+                onclick="formatText('span')"
+              ></i>
               <i class="fa-solid fa-code"></i>
             </div>
 
@@ -151,7 +176,7 @@
               <i class="fa-solid fa-gear"></i>
               <i class="fa-solid fa-paper-plane"></i>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <!-- Chat Content Section End -->
