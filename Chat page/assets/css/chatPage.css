@@ -165,7 +165,6 @@
 
 .chats-page .chat-area .conversation .receiver,
 .chats-page .chat-area .conversation .sender {
-  display: flex;
   margin: 15px 0;
   padding: 15px;
   border-radius: 10px;
@@ -177,7 +176,7 @@
 }
 
 .chats-page .chat-area .conversation .sender {
-  border: 1px solid var(--blue);
+  border: 1px solid rgba(0, 100, 255, 0.3);
 }
 
 .chat-area .conversation .sender {
@@ -188,10 +187,18 @@
   direction: ltr;
 }
 
+.chats-page .conversation .information {
+  display: flex;
+  align-items: center;
+}
+
 .chats-page .conversation .information .title {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+}
+
+.chats-page .conversation .information h3 {
+  margin: 0 5px;
 }
 
 .chats-page .chat-area .conversation .badge {
@@ -199,16 +206,16 @@
   background-color: var(--blue);
   border-radius: 20px;
   color: #fff;
-  margin: 0 5px;
   font-size: 12px;
 }
 
 .chats-page .chat-area .conversation .date {
   color: var(--grey);
+  margin: 0 5px;
 }
 
-.chats-page .chat-area .sender .date {
-  margin-right: 5px;
+.chats-page .chat-area .conversation .msgContainer {
+  padding: 10px;
 }
 
 .chats-page .chat-area .message-area {
@@ -234,11 +241,14 @@
 .chats-page .chat-area .message-area .send {
   position: absolute;
   color: #222f3e;
+  background-color: #fff;
+  font-weight: 800;
   right: 30px;
   top: 22px;
   z-index: 5;
   padding: 5px;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
@@ -346,7 +356,7 @@
 }
 
 .chats-page .info .info-details {
-  height: calc((100% - 12rem));
+  height: calc((100% - 13rem));
   display: none;
 }
 

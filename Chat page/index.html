@@ -32,11 +32,11 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Tiny MCE -->
     <script
       src="https://cdn.tiny.cloud/1/s2jmg399d3jcrvomq21w39h9otm6ed6h2b8ngewrpqytgbqz/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
     ></script>
-
     <script>
       tinymce.init({
         selector: "#mytextarea",
@@ -45,9 +45,15 @@
         toolbar: "undo redo | blocks | bold italic | emoticons",
       });
     </script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
 
-  <body>
+  <body onload="initializeData()">
     <div class="chats-page">
       <!-- Chats Section Begin -->
       <section class="chats">
@@ -107,16 +113,18 @@
 
         <div class="conversation">
           <div class="receiver">
-            <img
-              src="assets/img/testimonial-2-nurhansamy.jpg"
-              alt="receiver image"
-            />
             <div class="information">
+              <img
+                src="assets/img/testimonial-2-nurhansamy.jpg"
+                alt="receiver image"
+              />
               <div class="title">
                 <h3>Upwork Talent Success</h3>
                 <span class="badge">APP</span>
                 <span class="date">8:46 PM</span>
               </div>
+            </div>
+            <div class="msgContainer">
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Distinctio soluta, dolor inventore nihil ex nulla cupiditate
@@ -127,15 +135,17 @@
           </div>
 
           <div class="sender">
-            <img
-              src="assets/img/testimonial-2-nurhansamy.jpg"
-              alt="receiver image"
-            />
             <div class="information">
+              <img
+                src="assets/img/testimonial-2-nurhansamy.jpg"
+                alt="sender image"
+              />
               <div class="title">
                 <h3>Upwork Talent Success</h3>
                 <span class="date">8:46 PM</span>
               </div>
+            </div>
+            <div class="msgContainer">
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Distinctio soluta, dolor inventore nihil ex nulla cupiditate
@@ -147,36 +157,16 @@
         </div>
 
         <div class="message-area">
-          <textarea placeholder="Write a message..." id="mytextarea">
+          <textarea
+            placeholder="Write a message..."
+            id="mytextarea"
+            onpaste="return false"
+          >
           </textarea>
-          <strong class="send"
-            >Send <i class="fa-solid fa-paper-plane"></i
-          ></strong>
 
-          <!-- <div contenteditable="true" class="write-message">
-            Write a message...
-          </div> -->
-
-          <!-- <div class="icons">
-            <div class="left">
-              <i class="fa-solid fa-bold" onclick="formatText('strong')"></i>
-              <i class="fa-solid fa-italic" onclick="formatText('em')"></i>
-              <i
-                class="fa-solid fa-strikethrough"
-                onclick="formatText('span')"
-              ></i>
-              <i class="fa-solid fa-code"></i>
-            </div>
-
-            <div class="right">
-              <i class="fa-solid fa-at"></i>
-              <i class="fa-solid fa-paperclip"></i>
-              <i class="fa-solid fa-face-smile"></i>
-              |
-              <i class="fa-solid fa-gear"></i>
-              <i class="fa-solid fa-paper-plane"></i>
-            </div>
-          </div> -->
+          <button class="send" onclick="sendMessage()">
+            Send <i class="fa-solid fa-paper-plane"></i>
+          </button>
         </div>
       </section>
       <!-- Chat Content Section End -->
@@ -324,5 +314,10 @@
 
     <!-- Main JS -->
     <script src="assets/js/chatPageMain.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
   </body>
 </html>
