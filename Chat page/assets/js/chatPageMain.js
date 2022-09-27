@@ -50,7 +50,7 @@ function sendMessage() {
     }).showToast();
   } else {
     const messages = iDocument.querySelectorAll(
-      "p, pre, div, h1, h2, h3, h4, h5, h6"
+      "p, pre, div, h1, h2, h3, h4, h5, h6, ul, ol, ul"
     );
 
     createMessage("sender", "Mohamed Emad", "9:00 PM", messages);
@@ -100,7 +100,10 @@ function createMessage(type, name, date, messages) {
 
   for (message of messages) {
     messageContainer.appendChild(message);
-    if (regExp.test(message.textContent)) message.style.textAlign = "right";
+    if (regExp.test(message.textContent)) {
+      message.style.textAlign = "right";
+      message.style.direction = "rtl";
+    }
     totalMessages.push(message.outerHTML);
   }
 
