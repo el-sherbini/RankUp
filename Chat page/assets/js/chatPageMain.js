@@ -23,9 +23,13 @@ let totalMessages = [],
   iframe,
   iWindow,
   iDocument,
-  iParagraph;
+  iParagraph,
+  lastChild;
 
 function initializeData() {
+  lastChild = Array.from(document.querySelectorAll(".sender, .receiver")).pop();
+  lastChild.scrollIntoView({ block: "end", behavior: "smooth" });
+
   iframe = document.querySelector("#mytextarea_ifr");
   iWindow = iframe.contentWindow;
   iDocument = iWindow.document;
@@ -107,6 +111,8 @@ function createMessage(type, name, date, messages) {
     totalMessages.push(message.outerHTML);
   }
 
-  let lastChild = Array.from(document.querySelectorAll(".sender")).pop();
+  console.log(totalMessages);
+
+  lastChild = Array.from(document.querySelectorAll(".sender")).pop();
   lastChild.scrollIntoView(true);
 }
