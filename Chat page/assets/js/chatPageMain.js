@@ -33,9 +33,8 @@ function initializeData() {
 
 function sendMessage() {
   iParagraph = iDocument.getElementsByTagName("p")[0];
-  console.log(iParagraph);
 
-  if (iParagraph.textContent === "") {
+  if (iParagraph?.textContent === "") {
     Toastify({
       text: "Message can't be empty",
       duration: 2000,
@@ -50,10 +49,10 @@ function sendMessage() {
       },
     }).showToast();
   } else {
-    const messages =
-      iDocument.querySelectorAll("p") || iDocument.querySelectorAll("div");
+    const messages = iDocument.querySelectorAll(
+      "p, pre, div, h1, h2, h3, h4, h5, h6"
+    );
 
-    console.log(messages);
     createMessage("sender", "Mohamed Emad", "9:00 PM", messages);
   }
 }
@@ -97,10 +96,14 @@ function createMessage(type, name, date, messages) {
 
   information.appendChild(title);
 
+  let regExp = /[\u0600-\u06FF]/g;
+
   for (message of messages) {
     messageContainer.appendChild(message);
+    if (regExp.test(message.textContent)) message.style.textAlign = "right";
     totalMessages.push(message.outerHTML);
   }
 
-  console.log(totalMessages);
+  let lastChild = Array.from(document.querySelectorAll(".sender")).pop();
+  lastChild.scrollIntoView(true);
 }
