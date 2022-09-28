@@ -54,7 +54,7 @@ function sendMessage() {
     }).showToast();
   } else {
     const messages = iDocument.querySelectorAll(
-      "p, pre, div, h1, h2, h3, h4, h5, h6, ul, ol, ul"
+      "p, pre, div, h1, h2, h3, h4, h5, h6, ul, ol, ul, hr"
     );
 
     createMessage("sender", "Mohamed Emad", "9:00 PM", messages);

@@ -42,10 +42,13 @@
       tinymce.init({
         selector: "#mytextarea",
         menubar: false,
-        plugins: "emoticons lists",
+        plugins: "emoticons lists visualblocks hr",
         statusbar: false,
+        table_toolbar:
+          "tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol",
+
         toolbar:
-          "undo redo | blocks | bold italic underline | numlist bullist | emoticons",
+          "hr | undo redo | formatselect | bold italic underline | numlist bullist | emoticons",
       });
     </script>
 
@@ -102,6 +105,7 @@
             <i
               class="fa-solid fa-chevron-left"
               onclick="toggleSection('chats')"
+              title="Chats"
             ></i>
             <div>
               <h1>Upwork Events & Webinars</h1>
@@ -111,6 +115,7 @@
           <i
             class="fa-solid fa-circle-exclamation"
             onclick="toggleSection('info')"
+            title="Info"
           ></i>
         </div>
 
@@ -167,8 +172,9 @@
           >
           </textarea>
 
-          <button class="send" onclick="sendMessage()">
-            Send <i class="fa-solid fa-paper-plane"></i>
+          <button class="send" onclick="sendMessage()" title="Send message">
+            <span>Send</span>
+            <i class="fa-solid fa-paper-plane"></i>
           </button>
         </div>
       </section>

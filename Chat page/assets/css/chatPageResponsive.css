@@ -37,3 +37,15 @@
     display: inline !important;
   }
 }
+
+@media only screen and (min-width: 0) and (max-width: 576px) {
+  .chats-page .message-area .send {
+    bottom: -5px;
+    top: auto !important;
+    padding: 5px 7px;
+  }
+
+  .chats-page .message-area .send span {
+    display: none;
+  }
+}
